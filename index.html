@@ -14,14 +14,14 @@
     <link rel="stylesheet" href="base.css">
 </head>
 <body>
-    <div class="content">
+    <div class="frame">
         <div class="menu">
             <a class="menuItem selected" id="indexGo" href='index.html'>
                 <img class="icon" src="resources/image/icon_coin.png"/>
                 <p class="iconCaption">행운상점</p>
             </a>
 
-            <a class="menuItem" id="selfBarGo" href='selfBar.html'>
+            <a class="menuItem" id="selfBarGo" href="javascript:showAlert();">
                 <img class="icon" src="resources/image/icon_paper.png"/>
                 <p class="iconCaption">자료실</p>
             </a>
@@ -32,7 +32,7 @@
             </a>
         </div>
 
-        <div class="game">
+        <div class="content">
             <img class="storeClover" src="resources/image/store_clover.png"/>
             <img class="storeHat" src="resources/image/store_hat.png"/>
             <img class="storeFrame" src="resources/image/game_frame_longer.png"/>
@@ -41,5 +41,21 @@
         </div>
     </div>
 
+    <div class="alertPop">
+        <p>자료실로 이동하면 게임이 중단됩니다. 이동할까요?</p>
+        <div>
+        <a class="btn" href='selfBar.html'>이동</a>
+        <a class="btn" href="javascript:hideAlert();">머물기</a>
+        </div>
+    </div>
+
+    <script>
+        function showAlert() {
+            $(".alertPop").addClass("active");
+        }
+        function hideAlert() {
+            $(".alertPop").removeClass("active");
+        }
+    </script>
 </body>
 </html>
