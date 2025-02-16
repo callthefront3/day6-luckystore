@@ -210,31 +210,36 @@ body {
     display: none;
 }
 .alertPop.active {
-    background: url("resources/image/ui_alert.jpg") no-repeat;
+    background: url("resources/image/ui_alert.png") no-repeat;
     display: block;
     position: fixed;
-    top: calc(50% - 25px);
+    top: 350px;
     left: 50%;
-    width: 486px; height: 259px;
-    transform: translate(-50%, -50%);
+    width: 378px; height: 189px;
+    transform: translate(-50%, 0);
     text-align: center;
     z-index: 10;
 }
 .alertPop p {
-    margin: 80px 80px 20px 80px;
+    margin: 47px 80px 13px 80px;
     line-height: 1.3;
-    text-decoration-line: none;
 }
 .alertPop div {
     box-sizing: border-box;
 }
 .alertPop .btn {
-    background: url("resources/image/ui_btn_1.jpg") no-repeat;
+    background: url("resources/image/ui_btn_1.png") no-repeat;
     display: inline-block;
-    margin: 10px 10px;
-    width: 86px; height: 43px;
+    margin: 0px 5px;
+    width: 80px; height: 45px;
+    text-decoration: none;
 }
 .alertPop .btn:hover {
-    background: url("resources/image/ui_btn_2.jpg") no-repeat;
+    /* background: url("resources/image/ui_btn_2.png") no-repeat; */
+    transform: translateY(2px);
+}
+.alertPop .btn p {
+    margin: 8px 0px;
+    padding: 0px;
 }
 /* ----- ALERT : end ----- */
