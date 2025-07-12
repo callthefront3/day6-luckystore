@@ -13,19 +13,22 @@
     color: rgb(41, 38, 50);
     font-family: 'Galmuri7';
     font-size: 18px;
-}
-
-HTML, body {
-    width: 100%; height: 100%;
+    text-shadow: -2px 0px rgb(255, 255, 255), 0px 2px rgb(255, 255, 255), 2px 0px rgb(255, 255, 255), 0px -2px rgb(255, 255, 255);
 }
 
 body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     background-image:  linear-gradient(135deg, rgb(240, 192, 192) 25%, transparent 25%), linear-gradient(225deg, rgb(240, 192, 192) 25%, transparent 25%), linear-gradient(45deg, rgb(240, 192, 192) 25%, transparent 25%), linear-gradient(315deg, rgb(240, 192, 192) 25%, #ffffff 25%);
     background-position: 10px 0, 10px 0, 0 0, 0 0;
     background-size: 200px 200px;
     background-repeat: repeat;
 
     animation: backgroundScroll 50s linear infinite;
+
+    height: max-content;
 }
 
 @keyframes backgroundScroll {
@@ -38,24 +41,54 @@ body {
   }
 }
 
+/* PC */
+@media screen and (min-width: 1031px){
 .frame {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: flex-start;
 
-    margin: 0 auto;
     width: 800px;
+    margin: 10vh 0;
+}
+}
+/* Mobile */
+@media screen and (max-width: 1030px){
+.frame {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 800px;
+    margin: 5vh 0;
+}
 }
 
+/* PC */
+@media screen and (min-width: 1031px){
 .menu {
-    flex: 1 200px;
-    padding-top: 200px;
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+}
+/* Mobile */
+@media screen and (max-width: 1030px){
+.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
 }
 
 .menu .menuItem {
-    display: block;
-    margin: 10px auto 30px auto;
+    margin: 10px 0;
     width: 100px; height: 100px;
     text-align: center;
     text-decoration-line: none;
@@ -69,6 +102,8 @@ body {
     margin: 5px 0px 0px 0px;
     width: 60px; height: auto;
     transition: all 0.5s ease-out;
+
+    image-rendering: pixelated
 }
 .menu .icon:hover {
     transform: scale(1.1);
@@ -78,18 +113,32 @@ body {
     margin: 0px 0px 5px 0px;
 }
 
+/* PC */
+@media screen and (min-width: 1031px){
 .content {
-    flex: 1 600px;
+    flex: 5;
     position: relative;
-    margin-right: 50px;
-    height: 950px;
+
+    min-height: 800px;
+}
+}
+/* Mobile */
+@media screen and (max-width: 1030px){
+.content {
+    position: relative;
+
+    margin-top: 20px;
+    min-height: 600px;
+}
 }
 /* ----- FRAME : end ----- */
 
+/* PC */
+@media screen and (min-width: 1031px){
 /* ----- GAME : start ----- */
 .content .storeClover{
     position: absolute;
-    top: 50px; left: 50%;
+    bottom: 700px; left: 50%;
     margin-left: -50.4px; /* width의 50% */
     width: 100.8px; height: auto;
     animation : lotate 5s infinite ease-in-out;
@@ -112,96 +161,176 @@ body {
 
 .content .storeHat{
     position: absolute;
-    top: 102px; left: 50%;
+    bottom: 460px; left: 50%;
     margin-left: -258.6px; /* width의 50% */
     width: 517.2px; height: auto;
     z-index: 2;
+
+    image-rendering: pixelated
 }
 
 .content .storeFrame{
     position: absolute;
-    top: 386px; left: 50%;
+    bottom: 0px; left: 50%;
     margin-left: -229.5px; /* width의 50% */
     width: 459px; height: auto;
     z-index: 1;
     pointer-events: none;
+
+    image-rendering: pixelated
 }
 
 .content iframe {
     position: absolute;
-    top: 394px; left: 50%;
+    bottom: 10px; left: 50%;
     margin-left: -217px; /* width의 50% */
     width: 434px; height: 465px;
     z-index: 0;
+
+    image-rendering: pixelated
+}
+}
+/* Mobile */
+@media screen and (max-width: 1030px){
+.content .storeClover{
+    position: absolute;
+    top: 0px; left: 50%;
+    margin-left: -35.28px; /* width의 50% */
+    width: 70.56px; height: auto;
+    animation : lotate 5s infinite ease-in-out;
+    z-index: 3;
+}
+
+@keyframes lotate {
+	0% {
+		transform : rotate(0deg)
+	}
+
+	50% {
+		transform : rotate(180deg)
+	}
+
+	100% {
+		transform : rotate(360deg)
+	}
+}
+
+.content .storeHat{
+    position: absolute;
+    top: 30px; left: 50%;
+    margin-left: -181.02px; /* width의 50% */
+    width: 362.04px; height: auto;
+    z-index: 2;
+
+    image-rendering: pixelated
+}
+
+.content .storeFrame{
+    position: absolute;
+    top: 232px; left: 50%;
+    margin-left: -160.65px; /* width의 50% */
+    width: 321.3px; height: auto;
+    z-index: 1;
+    pointer-events: none;
+
+    image-rendering: pixelated
+}
+
+.content iframe {
+    position: absolute;
+    top: 235px; left: 50%;
+    margin-left: -151.9px; /* width의 50% */
+    width: 303.8px; height: 330px;
+    z-index: 0;
+
+    image-rendering: pixelated
+}
 }
 /* ----- GAME : end ----- */
 
 /* ----- MEDIA : start ----- */
+/* PC */
+@media screen and (min-width: 1031px){
+.barbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+}
+/* Mobile */
+@media screen and (max-width: 1030px){
+.barbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 30vh;
+}
+}
+
+.barbox .title {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+/* PC */
+@media screen and (min-width: 1031px){
 .arcExample {
-    display: block;
-    margin: 100px auto 0px auto;
-    width: 460px; height: auto;
-    border: 2px dashed rgb(235, 117, 156);
+    min-width: 100%; min-height: 200px;
+    background-image: url(resources/selfdownload/arc.png);
+    background-position-y: 72%;
+    background-size: cover;
+}
+}
+/* Mobile */
+@media screen and (max-width: 1030px){
+.arcExample {
+    min-width: 80%; min-height: 200px;
+    background-image: url(resources/selfdownload/arc.png);
+    background-position-y: 72%;
+    background-size: cover;
+}
 }
 
 .arc {
-    position: absolute;
-    margin: 10px 0px 0px 10px;
-    top: 405px;
-    width: 550px; height: 140px;
-}
-
-.arc .arcItem {
-    display: inline-block;
-    margin: 0px 1px;
-    width: 60.5px; height: 60px;
-    text-align: center;
-}
-
-.arc .arcItem img {
-    margin: auto;
-    width: 50px; height: auto;
-}
-
-.arc .arcItem p {
-    margin: 5px 0px;
-    font-size: 14px;
-}
-.arc .arcItem p:hover {
-    text-decoration: underline;
-    -webkit-text-decoration-color: rgb(235, 117, 156); /* safari still uses vendor prefix */
-    text-decoration-color: rgb(235, 117, 156);
-    color: rgb(235, 117, 156);
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color: #fdf4f4;
 }
 
 .wf {
-    position: absolute;
-    margin: 23px 0px 0px 10px;
-    top: 575px;
-    width: 550px; height: 230px;
+    flex: 2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color: #fdf4f4;
 }
 
-.wf .wfItem {
-    display: inline-block;
-    margin: 10px -3px 40px -3px;
-    width: 68.5px; height: 60px;
+.item {
+    margin: 18px 20px;
+    width: 95px; height: 110px;
     text-align: center;
 }
 
-.wf .wfItem img {
+.item img {
     margin: auto;
-    width: 60px; height: auto;
+    width: auto; height: 80px;
+
+    image-rendering: pixelated
 }
 
-.wf .wfItem p {
+.item p {
     margin: 5px 0px;
     font-size: 14px;
+    text-decoration-line: none;
 }
-.wf .wfItem p:hover {
-    text-decoration: underline;
-    -webkit-text-decoration-color: rgb(235, 117, 156); /* safari still uses vendor prefix */
-    text-decoration-color: rgb(235, 117, 156);
-    color: rgb(235, 117, 156);
+
+.item p:hover {
+    text-decoration-line: solid;
 }
 /* ----- MEDIA : end ----- */
 
@@ -213,12 +342,14 @@ body {
     background: url("resources/image/ui_alert.png") no-repeat;
     display: block;
     position: fixed;
-    top: 350px;
+    top: 40vh;
     left: 50%;
     width: 378px; height: 189px;
     transform: translate(-50%, 0);
     text-align: center;
     z-index: 10;
+
+    image-rendering: pixelated
 }
 .alertPop p {
     margin: 47px 80px 13px 80px;
@@ -243,3 +374,95 @@ body {
     padding: 0px;
 }
 /* ----- ALERT : end ----- */
+
+
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* 이벤트 막기 */
+    display: flex;
+    justify-content: space-around;
+    overflow: hidden;
+    z-index: -100;
+}
+
+.particles .sungjin {
+    background: url(resources/selfdownload/arc_s.png) no-repeat;
+    background-size: contain;
+}
+.particles .youngk {
+    background: url(resources/selfdownload/arc_y.png) no-repeat;
+    background-size: contain;
+}
+.particles .wonpil {
+    background: url(resources/selfdownload/arc_w.png) no-repeat;
+    background-size: contain;
+}
+.particles .dowoon {
+    background: url(resources/selfdownload/arc_d.png) no-repeat;
+    background-size: contain;
+}
+
+
+.particles div {
+  animation: particles 9.5s linear infinite;
+  align-self: flex-end;
+  width: 100px;
+  height: 100px;
+  z-index: -100;
+  transform: translateY(100%);
+  animation: wiggle 1s infinite ease-in-out;~
+
+  &:nth-child(1) { 
+    animation-duration: 1s; 
+    }
+  &:nth-child(2) { 
+    animation-duration: 17s; 
+    }
+  &:nth-child(3) { 
+    animation-duration: 8s; 
+    }
+  &:nth-child(4) { 
+    animation-duration: 3s;
+    }
+  &:nth-child(5) { 
+    animation-duration: 11s;
+    }
+  &:nth-child(6) { 
+    animation-duration: 6s;
+    }
+  &:nth-child(7) { 
+    animation-duration: 12s;
+    }
+  &:nth-child(8) { 
+    animation-duration: 18s;
+    }
+  &:nth-child(9) {
+    animation-duration: 2s;
+    }
+  &:nth-child(10) {
+    animation-duration: 8s;
+    }
+  &:nth-child(11) {
+    animation-duration: 10s;
+    }
+  &:nth-child(12) {
+    animation-duration: 2.5s;
+    }
+}
+
+@keyframes particles { 
+  from { transform: translateY(100%) rotate(-50deg) scale(300%)}
+  to   { transform: translateY(calc(-100vh + -100%)) rotate(20deg) scale(350%)}
+}
+
+  @keyframes wiggle {
+  0%   { transform: translateX(0); }
+  25%  { transform: translateX(-4px); }
+  50%  { transform: translateX(4px); }
+  75%  { transform: translateX(-3px); }
+  100% { transform: translateX(0); }
+}

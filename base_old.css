@@ -1,0 +1,245 @@
+/* ----- FONTS : start ----- */
+@font-face {
+    font-family: "Galmuri7";
+    src: url("resources/font/Galmuri7.ttf") format("truetype");
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+/* ----- FONTS : end ----- */
+
+/* ----- FRAME : start ----- */
+* {
+    margin: 0; padding: 0;
+    color: rgb(41, 38, 50);
+    font-family: 'Galmuri7';
+    font-size: 18px;
+}
+
+HTML, body {
+    width: 100%; height: 100%;
+}
+
+body {
+    background-image:  linear-gradient(135deg, rgb(240, 192, 192) 25%, transparent 25%), linear-gradient(225deg, rgb(240, 192, 192) 25%, transparent 25%), linear-gradient(45deg, rgb(240, 192, 192) 25%, transparent 25%), linear-gradient(315deg, rgb(240, 192, 192) 25%, #ffffff 25%);
+    background-position: 10px 0, 10px 0, 0 0, 0 0;
+    background-size: 200px 200px;
+    background-repeat: repeat;
+
+    animation: backgroundScroll 50s linear infinite;
+}
+
+@keyframes backgroundScroll {
+	0% {
+    background-position: 0 0;
+  }
+	100% {
+    /* pattern bg texture is 1000x1000px */
+    background-position:0 -1000px;
+  }
+}
+
+.frame {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+
+    margin: 0 auto;
+    width: 800px;
+}
+
+.menu {
+    flex: 1 200px;
+    padding-top: 200px;
+}
+
+.menu .menuItem {
+    display: block;
+    margin: 10px auto 30px auto;
+    width: 100px; height: 100px;
+    text-align: center;
+    text-decoration-line: none;
+}
+
+.menu .selected {
+    border: 1px dotted rgb(82, 82, 82);
+}
+
+.menu .icon {
+    margin: 5px 0px 0px 0px;
+    width: 60px; height: auto;
+    transition: all 0.5s ease-out;
+}
+.menu .icon:hover {
+    transform: scale(1.1);
+}
+
+.menu .iconCaption {
+    margin: 0px 0px 5px 0px;
+}
+
+.content {
+    flex: 1 600px;
+    position: relative;
+    margin-right: 50px;
+    height: 950px;
+}
+/* ----- FRAME : end ----- */
+
+/* ----- GAME : start ----- */
+.content .storeClover{
+    position: absolute;
+    top: 50px; left: 50%;
+    margin-left: -50.4px; /* width의 50% */
+    width: 100.8px; height: auto;
+    animation : lotate 5s infinite ease-in-out;
+    z-index: 3;
+}
+
+@keyframes lotate {
+	0% {
+		transform : rotate(0deg)
+	}
+
+	50% {
+		transform : rotate(180deg)
+	}
+
+	100% {
+		transform : rotate(360deg)
+	}
+}
+
+.content .storeHat{
+    position: absolute;
+    top: 102px; left: 50%;
+    margin-left: -258.6px; /* width의 50% */
+    width: 517.2px; height: auto;
+    z-index: 2;
+}
+
+.content .storeFrame{
+    position: absolute;
+    top: 386px; left: 50%;
+    margin-left: -229.5px; /* width의 50% */
+    width: 459px; height: auto;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.content iframe {
+    position: absolute;
+    top: 394px; left: 50%;
+    margin-left: -217px; /* width의 50% */
+    width: 434px; height: 465px;
+    z-index: 0;
+}
+/* ----- GAME : end ----- */
+
+/* ----- MEDIA : start ----- */
+.arcExample {
+    display: block;
+    margin: 100px auto 0px auto;
+    width: 460px; height: auto;
+    border: 2px dashed rgb(235, 117, 156);
+}
+
+.arc {
+    position: absolute;
+    margin: 10px 0px 0px 10px;
+    top: 405px;
+    width: 550px; height: 140px;
+}
+
+.arc .arcItem {
+    display: inline-block;
+    margin: 0px 1px;
+    width: 60.5px; height: 60px;
+    text-align: center;
+}
+
+.arc .arcItem img {
+    margin: auto;
+    width: 50px; height: auto;
+}
+
+.arc .arcItem p {
+    margin: 5px 0px;
+    font-size: 14px;
+}
+.arc .arcItem p:hover {
+    text-decoration: underline;
+    -webkit-text-decoration-color: rgb(235, 117, 156); /* safari still uses vendor prefix */
+    text-decoration-color: rgb(235, 117, 156);
+    color: rgb(235, 117, 156);
+}
+
+.wf {
+    position: absolute;
+    margin: 23px 0px 0px 10px;
+    top: 575px;
+    width: 550px; height: 230px;
+}
+
+.wf .wfItem {
+    display: inline-block;
+    margin: 10px -3px 40px -3px;
+    width: 68.5px; height: 60px;
+    text-align: center;
+}
+
+.wf .wfItem img {
+    margin: auto;
+    width: 60px; height: auto;
+}
+
+.wf .wfItem p {
+    margin: 5px 0px;
+    font-size: 14px;
+}
+.wf .wfItem p:hover {
+    text-decoration: underline;
+    -webkit-text-decoration-color: rgb(235, 117, 156); /* safari still uses vendor prefix */
+    text-decoration-color: rgb(235, 117, 156);
+    color: rgb(235, 117, 156);
+}
+/* ----- MEDIA : end ----- */
+
+/* ----- ALERT : start ----- */
+.alertPop {
+    display: none;
+}
+.alertPop.active {
+    background: url("resources/image/ui_alert.png") no-repeat;
+    display: block;
+    position: fixed;
+    top: 350px;
+    left: 50%;
+    width: 378px; height: 189px;
+    transform: translate(-50%, 0);
+    text-align: center;
+    z-index: 10;
+}
+.alertPop p {
+    margin: 47px 80px 13px 80px;
+    line-height: 1.3;
+}
+.alertPop div {
+    box-sizing: border-box;
+}
+.alertPop .btn {
+    background: url("resources/image/ui_btn_1.png") no-repeat;
+    display: inline-block;
+    margin: 0px 5px;
+    width: 80px; height: 45px;
+    text-decoration: none;
+}
+.alertPop .btn:hover {
+    /* background: url("resources/image/ui_btn_2.png") no-repeat; */
+    transform: translateY(2px);
+}
+.alertPop .btn p {
+    margin: 8px 0px;
+    padding: 0px;
+}
+/* ----- ALERT : end ----- */
