@@ -299,7 +299,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    background-color: #fdf4f4;
+    background-color: #fdf4f4a6;
 }
 
 .wf {
@@ -307,7 +307,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    background-color: #fdf4f4;
+    background-color: #fdf4f4a6;
 }
 
 .item {
